@@ -21,4 +21,4 @@ RUN apt-get install -y wget \
 
 # BioManager
 RUN R -e "install.packages(c('BiocManager'), dependencies=TRUE)"
-RUN apt-get install -y libcurl4-openssl-dev libpng-dev && R -e "BiocManager::install(c('org.Hs.eg.db', update=TRUE, dependencies=TRUE))"
+RUN apt-get install -y libcurl4-openssl-dev libpng-dev libssl-dev && R -e "BiocManager::install(c('org.Hs.eg.db', update=TRUE, dependencies=TRUE))"
