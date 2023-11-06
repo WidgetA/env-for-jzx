@@ -7,6 +7,7 @@ ENV TZ=Asia/Shanghai
 
 # os update
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y autoremove && apt-get -y autoclean
+RUN apt-get install -y apt-utils
 
 # build tool
 RUN apt-get install -y build-essential curl
