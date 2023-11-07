@@ -25,7 +25,10 @@ RUN apt-get install -y build-essential \
                     libtiff5-dev \
                     libjpeg-dev \
                     liblapack-dev \
-                    libopenblas-dev
+                    libopenblas-dev \
+                    libudunits2-dev \
+                    gdal-bin \
+                    libgdal-dev
 
 # R
 RUN apt-get install -y --no-install-recommends software-properties-common dirmngr \
@@ -39,3 +42,4 @@ RUN R -e "BiocManager::install(c('org.Hs.eg.db', update=TRUE, dependencies=TRUE)
 RUN R -e "BiocManager::install(c('limma', update=TRUE, dependencies=TRUE))"
 RUN R -e "install.packages(c('ggsci'), dependencies=TRUE)"
 RUN R -e "install.packages(c('ggplot2'), dependencies=TRUE)"
+RUN R -e "BiocManager::install(c('clusterProfiler', update=TRUE, dependencies=TRUE))"
