@@ -39,9 +39,11 @@ RUN apt-get install -y --no-install-recommends software-properties-common dirmng
 # BioManager
 RUN R -e "install.packages(c('BiocManager'), dependencies=TRUE)"
 RUN R -e "BiocManager::install(c('org.Hs.eg.db', update=TRUE, dependencies=TRUE))"
-RUN R -e "BiocManager::install(c('limma', update=TRUE, dependencies=TRUE))"
+RUN R -e "BiocManager::install(c('limma'))"
 RUN R -e "install.packages(c('ggsci'), dependencies=TRUE)"
 RUN R -e "install.packages(c('ggplot2'), dependencies=TRUE)"
 RUN R -e "BiocManager::install(c('clusterProfiler', update=TRUE, dependencies=TRUE))"
 RUN R -e "BiocManager::install(c('WGCNA'))"
 RUN R -e "BiocManager::install(c('GSEABase'))"
+RUN R -e "install.packages(c('pheatmap'), dependencies=TRUE)"
+RUN R -e "install.packages(c('ggridges'), dependencies=TRUE)"
